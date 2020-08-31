@@ -36,6 +36,29 @@ $ yarn install
 
 ## Setup App
 
+#### Create `.env`
+```bash
+# environment variables
+$ touch .env
+```
+#### Add variables and custom values
+```
+NODE_ENV=
+JWT_SECRET=
+PORT=
+```
+#### Create `database.env`
+```bash
+# database environment variables
+$ touch database.env
+```
+#### Add variables and custom values
+```
+POSTGRES_USER=
+POSTGRES_PASSWORD=
+POSTGRES_DB=
+```
+### Create Database and run migrations
 ```bash
 #start database
 $ docker-compose up
