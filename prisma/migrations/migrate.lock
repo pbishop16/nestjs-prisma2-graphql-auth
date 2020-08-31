@@ -1,0 +1,5 @@
+# Prisma Migrate lockfile v1
+
+20200825040416-first
+20200828025720-update_optional_columns
+20200829170453-correct_id_types

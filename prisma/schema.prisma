@@ -1,0 +1,31 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  url = "postgresql://prisma:prisma@localhost:5432/nestjs_boilerplate"
+  provider = "postgresql"
+}
+
+
+model User {
+  id String @id @default(uuid())
+  firstName String?
+  lastName String?
+  email String @unique
+  password String
+  posts Post[]
+  lastLogin DateTime?
+  createdAt DateTime? @default(now())
+  updatedAt DateTime?
+}
+
+model Post {
+  id String @id @default(uuid())
+  authorId String?
+  title String
+  body String?
+  author User? @relation(fields: [authorId], references: [id])
+  createdAt DateTime? @default(now())
+  updatedAt DateTime? 
+}
